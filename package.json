@@ -1,0 +1,16 @@
+{
+  "name": "file",
+  "version": "1.0.0",
+  "main": "file.js",
+  "type": "module",
+  "scripts": {
+    "test": "node file.js"
+  },
+  "author": "limm",
+  "license": "ISC",
+  "description": "Just a module that creates and reads files",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
