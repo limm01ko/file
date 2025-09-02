@@ -22,6 +22,7 @@ export default class File {
                         case '.json': output= JSON.stringify(data, null, 2); break;
                         // case '.xml': output= create(data).end({ prettyPrint: true }); break;
                         case '.txt': output= data; break;
+                         // Adicione novos formatos aqui: 
                         default: output= null; };
                     if(!output) { throw new Error(`[ ERRO]: Format ${this.propretery.format} is undefined`); }else
                         { writeFileSync(this.file, output, 'utf-8'); return 'File saved successfully'; };
@@ -36,7 +37,18 @@ export default class File {
             case '.json': data= JSON.parse(content); break;
             // case '.xml': data= new XMLParser().parse(content); break;
             case '.txt': data= content; break;
+            // Adicione novos formatos aqui:
+            // case '.meuFormato': data = ...; break;
             default: throw new Error(`[ ERRO]: Format ${this.propretery.format} not supported for reading`); };
         return data;
     }
 }
+
+// Criar um arquivo
+// new File({ filePath: "example.txt" }).write("Hi!", { overwrite: true })
+// "overwrite: true" -> sobrescreve o arquivo caso já exista
+// example.txt conterá: "Hi!"
+
+// Ler um arquivo
+// new File({ filePath: "example.txt" }).read()
+// Retorna: "Hi!"
